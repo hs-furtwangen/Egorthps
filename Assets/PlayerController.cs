@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public float cameraSpeedH = 2.0f;
     public float cameraSpeedV = 2.0f;
+    public Camera playerCamera;
 
     //Private
     private float yaw = 0.0f;
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
         //Camera Movement
         yaw += cameraSpeedH * Input.GetAxis("Mouse X");
         pitch -= cameraSpeedV * Input.GetAxis("Mouse Y");
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+        playerCamera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
 
         //Player body movement
         Vector3 position = rigidbody.position;
@@ -36,7 +37,11 @@ public class PlayerController : MonoBehaviour
         float xAxis = Input.GetAxis("Horizontal");
         float zAxis = Input.GetAxis("Vertical");
 
-        position = position + new Vector3(xAxis, 0, zAxis) * playerSpeed * Time.deltaTime;
+        Vector3 targetDirection = new Vector3(xAxis, 0f, zAxis);
+        targetDirection = playerCamera.transform.TransformDirection(targetDirection);
+        targetDirection.y = 0.0f;
+
+        position = position + targetDirection * playerSpeed * Time.deltaTime;
         rigidbody.MovePosition(position);
     }
 }
