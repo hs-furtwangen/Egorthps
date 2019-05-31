@@ -7,8 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed = 10.0f;
     public float cameraMoveSpeed = 0.1f;
 
-    public float speedH = 2.0f;
-    public float speedV = 2.0f;
+    public float cameraSpeedH = 2.0f;
+    public float cameraSpeedV = 2.0f;
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
@@ -24,13 +24,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        yaw += speedH * Input.GetAxis("Mouse X");
-        pitch -= speedV * Input.GetAxis("Mouse Y");
-
+        //Camera Movement
+        yaw += cameraSpeedH * Input.GetAxis("Mouse X");
+        pitch -= cameraSpeedV * Input.GetAxis("Mouse Y");
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
 
         Vector2 positionVector = transform.position;
 
+        //Player body movement
         float xAxis = Input.GetAxis("Horizontal");
         float zAxis = Input.GetAxis("Vertical");
 
