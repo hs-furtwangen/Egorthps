@@ -7,6 +7,7 @@ using System;
 public class GameController : MonoBehaviour
 {
     public GameObject uiCanvas;
+    public Camera mainCameraPrefab;
 
     private GameObject uiCanvasInstance;
     private float startTime;
@@ -16,12 +17,13 @@ public class GameController : MonoBehaviour
     {
         startTime = Time.time;
         uiCanvasInstance = Instantiate(uiCanvas);
+        Instantiate(mainCameraPrefab);
     }
 
     // Update is called once per frame
     void Update()
     {
-        uiCanvasInstance.GetComponentInChildren<Text>().text = "Time: " + Math.Round(Time.timeSinceLevelLoad, 2);
+        uiCanvasInstance.GetComponent<UIManager>().timeText.text = "Time: " + Math.Round(Time.timeSinceLevelLoad, 2);
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();

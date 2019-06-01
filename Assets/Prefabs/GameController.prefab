@@ -95,6 +95,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiCanvas: {fileID: 6276290053905661015, guid: bbc69aea83082ce4b9cb122099b81469,
     type: 3}
+  mainCameraPrefab: {fileID: 5390155667383043281, guid: 9c8ccbc196555684a9007417580096b5,
+    type: 3}
 --- !u!1 &5979120775257740395
 GameObject:
   m_ObjectHideFlags: 0
