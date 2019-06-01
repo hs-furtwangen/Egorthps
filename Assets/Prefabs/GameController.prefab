@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07aef2a3ae0c5cc45b2cd3c91199436c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiCanvas: {fileID: 6276290053905661015, guid: bbc69aea83082ce4b9cb122099b81469,
+    type: 3}
