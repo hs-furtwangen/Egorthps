@@ -65,6 +65,5 @@ public class LaserGenerator : MonoBehaviour
     {
         phase++;
         if ((int)phase >= amountPhases) phase = 0;
-        Debug.Log(phase);
     }
 }
