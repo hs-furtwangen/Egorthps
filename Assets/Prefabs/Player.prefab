@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 683744852}
   - component: {fileID: 683744851}
   - component: {fileID: 683744854}
+  - component: {fileID: 7561436340381493921}
+  - component: {fileID: 5060236915525099707}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -121,6 +123,34 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &7561436340381493921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683744850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7687526457e82143b3e07075f774129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5060236915525099707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683744850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a748bb50a7c8b94a9a9c03906c7819f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fov: 60
+  near: 0.3
+  far: 1000
+  orthographicSize: 50
 --- !u!1 &6898788529160132706
 GameObject:
   m_ObjectHideFlags: 0
