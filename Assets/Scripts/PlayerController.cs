@@ -3,6 +3,7 @@
 public class PlayerController : MonoBehaviour
 {
     //Public
+    public bool debugMode = true;
     public float playerMoveSpeed = 10.0f;
 
     public float cameraSpeedH = 2.0f;
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!isUsingPerspectiveViewMode) {
+        if (!isUsingPerspectiveViewMode || debugMode) {
             //Camera Movement
             rotationVector.y += cameraSpeedH * Input.GetAxis("Mouse X");
             rotationVector.x -= cameraSpeedV * Input.GetAxis("Mouse Y");
@@ -61,11 +62,14 @@ public class PlayerController : MonoBehaviour
         //Projection switching
         if (Input.GetMouseButtonDown(1))
         {
-            if (perspectiveCharges > 0) {
+            if (perspectiveCharges > 0 || debugMode) {
                 perspSwitcher.BlendToPerspective();
                 isUsingPerspectiveViewMode = true;
-                perspectiveCharges--;
-                UpdatePerspectiveChargesText();
+
+                if (!debugMode) {
+                    perspectiveCharges--;
+                    UpdatePerspectiveChargesText();
+                }
             }
         }
         if (Input.GetMouseButtonUp(1))
