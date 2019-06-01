@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b4ef49b9c602f40bc20f6acc38cb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoveSpeed: 4.5
+  debugMode: 1
+  playerMoveSpeed: 4
   cameraSpeedH: 2
   cameraSpeedV: 1
   jumpForce: 6.5
