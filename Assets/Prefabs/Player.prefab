@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b4ef49b9c602f40bc20f6acc38cb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoveSpeed: 7
+  playerMoveSpeed: 4.5
   cameraSpeedH: 2
   cameraSpeedV: 1
-  jumpForce: 6
+  jumpForce: 6.5
 --- !u!54 &6898788530164693595
 Rigidbody:
   m_ObjectHideFlags: 0
