@@ -5,7 +5,7 @@ using System.Collections;
 public class PerspectiveSwitcher : MonoBehaviour
 {
     private Matrix4x4 ortho, perspective;
-    public float fov, near, far, orthographicSize;
+    private float fov, near, far, orthographicSize;
     private float aspect;
     private MatrixBlender blender;
     private bool orthoOn;
