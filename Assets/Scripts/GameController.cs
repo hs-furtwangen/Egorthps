@@ -16,14 +16,14 @@ public class GameController : MonoBehaviour
     void Start()
     {
         startTime = Time.time;
-        uiCanvasInstance = Instantiate(uiCanvas);
+        //uiCanvasInstance = Instantiate(uiCanvas);
         Instantiate(mainCameraPrefab);
     }
 
     // Update is called once per frame
     void Update()
     {
-        uiCanvasInstance.GetComponent<UIManager>().timeText.text = Math.Round(Time.timeSinceLevelLoad, 2).ToString();
+        //uiCanvasInstance.GetComponent<UIManager>().timeText.text = Math.Round(Time.timeSinceLevelLoad, 2).ToString();
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
