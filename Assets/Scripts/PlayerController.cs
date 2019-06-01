@@ -10,21 +10,20 @@ public class PlayerController : MonoBehaviour
 
     public float jumpForce = 5.0f;
 
-    private Vector3 mov;
-    private Vector3 rot;
+    private Vector3 moveVector;
+    private Vector3 rotationVector;
 
     float distToGround;
-    Rigidbody rb;
+    Rigidbody rigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
         distToGround = GetComponent<Collider>().bounds.extents.y;
+        rigidbody = GetComponent<Rigidbody>();
 
-        rb = GetComponent<Rigidbody>();
-
-        mov = Vector3.zero;
-        rot = Vector3.zero;
+        moveVector = Vector3.zero;
+        rotationVector = Vector3.zero;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -34,26 +33,24 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Camera Movement
-        rot.y += cameraSpeedH * Input.GetAxis("Mouse X");
-        rot.x -= cameraSpeedV * Input.GetAxis("Mouse Y");
-        this.transform.rotation = Quaternion.Euler(rot);
+        rotationVector.y += cameraSpeedH * Input.GetAxis("Mouse X");
+        rotationVector.x -= cameraSpeedV * Input.GetAxis("Mouse Y");
+        transform.rotation = Quaternion.Euler(rotationVector);
 
-        mov = this.transform.right * Input.GetAxis("Horizontal") * playerSpeed * Time.deltaTime + this.transform.forward * Input.GetAxis("Vertical") * playerSpeed * Time.deltaTime;
+        //Player Movement
+        moveVector = (transform.right * Input.GetAxis("Horizontal") * playerSpeed * Time.deltaTime)
+            + (transform.forward * Input.GetAxis("Vertical") * playerSpeed * Time.deltaTime);
+        rigidbody.MovePosition(rigidbody.position + moveVector);
 
-        rb.MovePosition(rb.position + mov);
-
+        //Jumping
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
-            rb.AddForce(this.transform.up * jumpForce, ForceMode.Impulse);
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Camera.main.orthographic = !Camera.main.orthographic;
+            rigidbody.AddForce(this.transform.up * jumpForce, ForceMode.Impulse);
         }
     }
 
-    bool IsGrounded() {
-    return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+    bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, distToGround + 0.1f);
     }
 }
