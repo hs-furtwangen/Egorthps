@@ -38,20 +38,15 @@ public class PerspectiveSwitcher : MonoBehaviour
         cam.projectionMatrix = ortho;
     }
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            blender.BlendToMatrix(perspective, 0.3f);
+    public void BlendToPerspective() {
+        blender.BlendToMatrix(perspective, 0.3f);
             ppOrtho.SetActive(false);
             ppPerspective.SetActive(true);
-        }
+    }
 
-        if (Input.GetMouseButtonUp(1))
-        {
-            blender.BlendToMatrix(ortho, 0.3f);
+    public void BlendToOrthographic() {
+        blender.BlendToMatrix(ortho, 0.3f);
             ppOrtho.SetActive(true);
             ppPerspective.SetActive(false);
-        }
     }
 }
