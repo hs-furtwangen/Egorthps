@@ -7,8 +7,8 @@ public class SoundDetection : MonoBehaviour
     AudioSource audioSource;
     LineRenderer lr;
     public BeatDetection beatDetection; //add GO with the BeatDetection Script in here. Add BD Script to Main Camera
-    float cooldown = 0.4f;
-    float currentCooldown = 0f;
+    // float cooldown = 0.4f;
+    // float currentCooldown = 0f;
     BeatCube beatCube;
     Material mat;
 
@@ -26,9 +26,9 @@ public class SoundDetection : MonoBehaviour
         beatCube.NextColor();
     }
 
-    private void Update()
-    {
-        currentCooldown -= Time.deltaTime;
+    // private void Update()
+    // {
+    //     currentCooldown -= Time.deltaTime;
 
-    }
+    // }
 }
