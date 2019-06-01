@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5642820084847789883}
   - component: {fileID: 5642820084847789892}
   - component: {fileID: 5642820084847789893}
-  - component: {fileID: -7458712398818980051}
+  - component: {fileID: -6230701136420154080}
+  - component: {fileID: 1220927912023487339}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -92,7 +93,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-7458712398818980051
+--- !u!114 &-6230701136420154080
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,10 +102,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 5642820084847789895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce244baf6e85262428aa355a6b61c015, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ffc0f3f020e1f64c8ba948300d7a5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LerpRed: 1
-  LerpGreen: 1
-  LerpBlue: 1
-  SpeedFactor: 1
+  Colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - {r: 1, g: 0, b: 1, a: 1}
+  duration: 0.1
+  lastColor: {r: 0, g: 0, b: 0, a: 0}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
+  nextColor: {r: 0, g: 0, b: 0, a: 0}
+  mat: {fileID: 0}
+--- !u!114 &1220927912023487339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642820084847789895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6832616c4942d164da02268337d427ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatDetection: {fileID: 0}
