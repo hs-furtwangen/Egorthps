@@ -14,13 +14,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 rotationVector;
 
     float distToGround;
-    Rigidbody rigidbody;
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         distToGround = GetComponent<Collider>().bounds.extents.y;
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
 
         moveVector = Vector3.zero;
         rotationVector = Vector3.zero;
@@ -40,12 +40,12 @@ public class PlayerController : MonoBehaviour
         //Player Movement
         moveVector = (transform.right * Input.GetAxis("Horizontal") * playerSpeed * Time.deltaTime)
             + (transform.forward * Input.GetAxis("Vertical") * playerSpeed * Time.deltaTime);
-        rigidbody.MovePosition(rigidbody.position + moveVector);
+        rb.MovePosition(rb.position + moveVector);
 
         //Jumping
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
-            rigidbody.AddForce(this.transform.up * jumpForce, ForceMode.Impulse);
+            rb.AddForce(this.transform.up * jumpForce, ForceMode.Impulse);
         }
     }
 
