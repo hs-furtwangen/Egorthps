@@ -34,13 +34,14 @@ public class PerspectiveSwitcher : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetMouseButtonDown(1))
         {
-            orthoOn = !orthoOn;
-            if (orthoOn)
-                blender.BlendToMatrix(ortho, 0.3f);
-            else
-                blender.BlendToMatrix(perspective, 0.3f);
+            blender.BlendToMatrix(perspective, 0.3f);
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            blender.BlendToMatrix(ortho, 0.3f);
         }
     }
 }
