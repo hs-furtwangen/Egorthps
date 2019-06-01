@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        uiCanvasInstance.GetComponent<UIManager>().timeText.text = "Time: " + Math.Round(Time.timeSinceLevelLoad, 2);
+        uiCanvasInstance.GetComponent<UIManager>().timeText.text = Math.Round(Time.timeSinceLevelLoad, 2).ToString();
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
