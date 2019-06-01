@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RocketBehaviour : MonoBehaviour
 {
+    public GameObject explosion;
     private float speed = 1f;
     private float rotationSpeed = 0.01f;
     private Rigidbody rb;
@@ -24,7 +25,11 @@ public class RocketBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
         if(collision.gameObject.name != "RocketSpawner")
+        {
+            Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
+        }
     }
 }
