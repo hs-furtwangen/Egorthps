@@ -41,5 +41,10 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(this.transform.up * 3, ForceMode.Impulse);
         }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Camera.main.orthographic = !Camera.main.orthographic;
+        }
     }
 }
