@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &340383496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872586568968856759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 8608ec81ee27a15488d33f9dad239e91, type: 2}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &6898788529160132706
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 1.242, z: -14.706014}
+  m_FollowOffset: {x: 0.04, y: 1.202, z: -12.265993}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -169,7 +185,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 2
+    OrthographicSize: 1
     NearClipPlane: 0.1
     FarClipPlane: 100
     Dutch: 0
@@ -296,11 +312,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6258403187496507446, guid: ba0096e05ee64f8418e3185fbdc154b3,
+        type: 3}
+      propertyPath: far clip plane
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258403187496507446, guid: ba0096e05ee64f8418e3185fbdc154b3,
+        type: 3}
+      propertyPath: orthographic size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217029768593467097, guid: ba0096e05ee64f8418e3185fbdc154b3,
+        type: 3}
+      propertyPath: fov
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217029768593467097, guid: ba0096e05ee64f8418e3185fbdc154b3,
+        type: 3}
+      propertyPath: near
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217029768593467097, guid: ba0096e05ee64f8418e3185fbdc154b3,
+        type: 3}
+      propertyPath: far
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217029768593467097, guid: ba0096e05ee64f8418e3185fbdc154b3,
+        type: 3}
+      propertyPath: orthographicSize
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba0096e05ee64f8418e3185fbdc154b3, type: 3}
 --- !u!4 &683744853 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6258403187496507447, guid: ba0096e05ee64f8418e3185fbdc154b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6258403187081332322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1872586568968856759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5703407719829578453, guid: ba0096e05ee64f8418e3185fbdc154b3,
     type: 3}
   m_PrefabInstance: {fileID: 6258403187081332322}
   m_PrefabAsset: {fileID: 0}

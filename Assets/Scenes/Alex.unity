@@ -694,17 +694,17 @@ PrefabInstance:
     - target: {fileID: 6898788530164693588, guid: 517fe94c5deeb954fb618c12fd28f79a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 6898788530164693588, guid: 517fe94c5deeb954fb618c12fd28f79a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.25
+      value: 1.21
       objectReference: {fileID: 0}
     - target: {fileID: 6898788530164693588, guid: 517fe94c5deeb954fb618c12fd28f79a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: -2.55
       objectReference: {fileID: 0}
     - target: {fileID: 6898788530164693588, guid: 517fe94c5deeb954fb618c12fd28f79a,
         type: 3}
@@ -762,21 +762,9 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 683744853, guid: 517fe94c5deeb954fb618c12fd28f79a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 683744853, guid: 517fe94c5deeb954fb618c12fd28f79a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 683744853, guid: 517fe94c5deeb954fb618c12fd28f79a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 683744852, guid: 517fe94c5deeb954fb618c12fd28f79a, type: 3}
-      propertyPath: orthographic size
-      value: 2
+      propertyPath: far clip plane
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 517fe94c5deeb954fb618c12fd28f79a, type: 3}
