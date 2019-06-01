@@ -7,6 +7,7 @@ using System;
 public class GameController : MonoBehaviour
 {
     public GameObject uiCanvas;
+    public Camera mainCameraPrefab;
 
     private GameObject uiCanvasInstance;
     private float startTime;
@@ -16,6 +17,7 @@ public class GameController : MonoBehaviour
     {
         startTime = Time.time;
         uiCanvasInstance = Instantiate(uiCanvas);
+        Instantiate(mainCameraPrefab);
     }
 
     // Update is called once per frame
