@@ -12,14 +12,13 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 rotationVector;
 
-    int projectionCharges = 3;
+    int perspectiveCharges = 3;
     float distToGround;
     Rigidbody rb;
 
     PerspectiveSwitcher perspSwitcher;
     bool isUsingPerspectiveViewMode = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         distToGround = GetComponent<Collider>().bounds.extents.y;
@@ -31,9 +30,14 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
 
         perspSwitcher = Camera.main.GetComponent<PerspectiveSwitcher>();
+
+        UpdatePerspectiveChargesText();
     }
 
-    // Update is called once per frame
+    void UpdatePerspectiveChargesText() {
+        GameUIManager.Instance.SetPerspectiveChargesText(perspectiveCharges.ToString());
+    }
+
     void Update()
     {
         if (!isUsingPerspectiveViewMode) {
@@ -57,9 +61,11 @@ public class PlayerController : MonoBehaviour
         //Projection switching
         if (Input.GetMouseButtonDown(1))
         {
-            if (projectionCharges > 0) {
+            if (perspectiveCharges > 0) {
                 perspSwitcher.BlendToPerspective();
                 isUsingPerspectiveViewMode = true;
+                perspectiveCharges--;
+                UpdatePerspectiveChargesText();
             }
         }
         if (Input.GetMouseButtonUp(1))

@@ -7,6 +7,7 @@ public class GameUIManager : MonoBehaviour
 {
     public static GameUIManager Instance;
     public Text timeText;
+    public Text perspectiveChargesText;
 
     void Start() {
         Instance = this;
@@ -14,5 +15,9 @@ public class GameUIManager : MonoBehaviour
 
     public void SetTimeText(string newText) {
         timeText.text = newText;
+    }
+
+    public void SetPerspectiveChargesText(string newText) {
+        perspectiveChargesText.text = newText;
     }
 }

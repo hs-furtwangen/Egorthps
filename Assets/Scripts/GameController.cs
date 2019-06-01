@@ -12,15 +12,13 @@ public class GameController : MonoBehaviour
     private GameObject uiCanvasInstance;
     private float startTime;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         startTime = Time.time;
         uiCanvasInstance = Instantiate(uiCanvas);
         Instantiate(mainCameraPrefab);
     }
 
-    // Update is called once per frame
     void Update()
     {
         GameUIManager.Instance.SetTimeText(Math.Round(Time.timeSinceLevelLoad, 2).ToString());
