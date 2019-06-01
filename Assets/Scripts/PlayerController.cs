@@ -3,14 +3,13 @@
 public class PlayerController : MonoBehaviour
 {
     //Public
-    public float playerSpeed = 10.0f;
+    public float playerMoveSpeed = 10.0f;
 
     public float cameraSpeedH = 2.0f;
     public float cameraSpeedV = 2.0f;
 
     public float jumpForce = 5.0f;
 
-    private Vector3 moveVector;
     private Vector3 rotationVector;
 
     float distToGround;
@@ -22,7 +21,6 @@ public class PlayerController : MonoBehaviour
         distToGround = GetComponent<Collider>().bounds.extents.y;
         rb = GetComponent<Rigidbody>();
 
-        moveVector = Vector3.zero;
         rotationVector = Vector3.zero;
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -38,9 +36,9 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(rotationVector);
 
         //Player Movement
-        moveVector = (transform.right * Input.GetAxis("Horizontal") * playerSpeed * Time.deltaTime)
-            + (transform.forward * Input.GetAxis("Vertical") * playerSpeed * Time.deltaTime);
-        rb.MovePosition(rb.position + moveVector);
+        rb.MovePosition(rb.position
+            + (transform.right * Input.GetAxis("Horizontal") * playerMoveSpeed * Time.deltaTime)
+            + (transform.forward * Input.GetAxis("Vertical") * playerMoveSpeed * Time.deltaTime));
 
         //Jumping
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
