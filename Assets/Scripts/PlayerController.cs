@@ -12,8 +12,12 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 rotationVector;
 
+    int projectionCharges = 3;
     float distToGround;
     Rigidbody rb;
+
+    PerspectiveSwitcher perspSwitcher;
+    bool isUsingPerspectiveViewMode = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,25 +29,43 @@ public class PlayerController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        perspSwitcher = Camera.main.GetComponent<PerspectiveSwitcher>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Camera Movement
-        rotationVector.y += cameraSpeedH * Input.GetAxis("Mouse X");
-        rotationVector.x -= cameraSpeedV * Input.GetAxis("Mouse Y");
-        transform.rotation = Quaternion.Euler(rotationVector);
+        if (!isUsingPerspectiveViewMode) {
+            //Camera Movement
+            rotationVector.y += cameraSpeedH * Input.GetAxis("Mouse X");
+            rotationVector.x -= cameraSpeedV * Input.GetAxis("Mouse Y");
+            transform.rotation = Quaternion.Euler(rotationVector);
 
-        //Player Movement
-        rb.MovePosition(rb.position
-            + (transform.right * Input.GetAxis("Horizontal") * playerMoveSpeed * Time.deltaTime)
-            + (transform.forward * Input.GetAxis("Vertical") * playerMoveSpeed * Time.deltaTime));
+            //Player Movement
+            rb.MovePosition(rb.position
+                + (transform.right * Input.GetAxis("Horizontal") * playerMoveSpeed * Time.deltaTime)
+                + (transform.forward * Input.GetAxis("Vertical") * playerMoveSpeed * Time.deltaTime));
 
-        //Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+            //Jumping
+            if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+            {
+                rb.AddForce(this.transform.up * jumpForce, ForceMode.Impulse);
+            }
+        }
+
+        //Projection switching
+        if (Input.GetMouseButtonDown(1))
         {
-            rb.AddForce(this.transform.up * jumpForce, ForceMode.Impulse);
+            if (projectionCharges > 0) {
+                perspSwitcher.BlendToPerspective();
+                isUsingPerspectiveViewMode = true;
+            }
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            perspSwitcher.BlendToOrthographic();
+            isUsingPerspectiveViewMode = false;
         }
     }
 

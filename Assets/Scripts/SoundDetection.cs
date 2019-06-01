@@ -23,13 +23,6 @@ public class SoundDetection : MonoBehaviour
 
     void OnBeatDetected(BeatDetection.EventInfo eventInfo)
     {
-        //eventInfo.messageInfo == BeatDetection.EventType.Kick
-        //if (currentCooldown < 0 && eventInfo.messageInfo == BeatDetection.EventType.Snare)
-        //{
-        //    mat.color = Color.HSVToRGB(Random.value, 1, 1);
-        //    currentCooldown = cooldown;
-        //}
-        Debug.Log("BEAT");
         beatCube.NextColor();
     }
 
