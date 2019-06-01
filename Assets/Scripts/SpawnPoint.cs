@@ -8,6 +8,7 @@ public class SpawnPoint : MonoBehaviour
 
     void Start()
     {
-        Instantiate(playerPrefab, transform.position, Quaternion.identity);
+        //Spawn the player
+        Instantiate(playerPrefab, transform.position, transform.rotation);
     }
 }
