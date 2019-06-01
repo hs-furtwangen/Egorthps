@@ -83,4 +83,10 @@ public class PlayerController : MonoBehaviour
     {
         return Physics.Raycast(transform.position, Vector3.down, distToGround + 0.1f);
     }
+
+    void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.CompareTag("Finish")) {
+            gameObject.SetActive(false);
+        }
+    }
 }
