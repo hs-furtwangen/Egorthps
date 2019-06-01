@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody rb;
 
-    Camera camera;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +23,6 @@ public class PlayerController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        camera = GetComponentInChildren<Camera>();
     }
 
     // Update is called once per frame
@@ -48,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            camera.orthographic = !camera.orthographic;
+            Camera.main.orthographic = !Camera.main.orthographic;
         }
     }
 }
