@@ -4,10 +4,10 @@ using System.Collections;
 [RequireComponent (typeof(Camera))]
 public class MatrixBlender : MonoBehaviour
 {
-    Camera camera;
+    Camera cam;
 
     public void Awake() {
-        camera = GetComponent<Camera>();
+        cam = GetComponent<Camera>();
     }
 
     public static Matrix4x4 MatrixLerp(Matrix4x4 from, Matrix4x4 to, float time)
@@ -23,15 +23,15 @@ public class MatrixBlender : MonoBehaviour
         float startTime = Time.time;
         while (Time.time - startTime < duration)
         {
-            camera.projectionMatrix = MatrixLerp(src, dest, (Time.time - startTime) / duration);
+            cam.projectionMatrix = MatrixLerp(src, dest, (Time.time - startTime) / duration);
             yield return 1;
         }
-        camera.projectionMatrix = dest;
+        cam.projectionMatrix = dest;
     }
  
     public Coroutine BlendToMatrix(Matrix4x4 targetMatrix, float duration)
     {
         StopAllCoroutines();
-        return StartCoroutine(LerpFromTo(camera.projectionMatrix, targetMatrix, duration));
+        return StartCoroutine(LerpFromTo(cam.projectionMatrix, targetMatrix, duration));
     }
 }
