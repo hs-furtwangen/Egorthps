@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BeatUi : MonoBehaviour
+public class BeatUi : MonoBehaviour, IBeatObject
 {
     public Color[] Colors =
     {
