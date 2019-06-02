@@ -49,6 +49,9 @@ public class BeatFont : MonoBehaviour, IBeatObject
 
     public void NextColor()
     {
+        if (!this.gameObject.activeInHierarchy)
+            return;
+
         StopAllCoroutines();
 
         nextColor = Colors[Mathf.RoundToInt(Random.Range(0, Colors.Length - 1))];
