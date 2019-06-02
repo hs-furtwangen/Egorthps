@@ -46,6 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c1f7696068eee438c4a853abbdd085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxRange: 100
+  cooldown: 4
+  duration: 1.5
+  warmup: 3
   laser: {fileID: 6904629227075236883}
 --- !u!198 &4276197606275607535
 ParticleSystem:
