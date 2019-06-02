@@ -4812,7 +4812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d7a0f585f36504788d0879ebf00e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneToLoad: 
+  nextSceneToLoad: End
   levelFinishedAudioSource: {fileID: 7910607844082988974}
 --- !u!1 &8330451391776717696
 GameObject:
