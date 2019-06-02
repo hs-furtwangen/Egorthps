@@ -40,13 +40,15 @@ public class PlayerController : MonoBehaviour
         UpdatePerspectiveChargesText();
     }
 
-    void UpdatePerspectiveChargesText() {
+    void UpdatePerspectiveChargesText()
+    {
         GameUIManager.Instance.SetPerspectiveChargesText(perspectiveCharges.ToString());
     }
 
     void Update()
     {
-        if (!isUsingPerspectiveViewMode || debugMode) {
+        if (!isUsingPerspectiveViewMode || debugMode)
+        {
             //Camera Movement
             rotationVector.y += cameraSpeedH * Input.GetAxis("Mouse X") * Time.deltaTime;
             rotationVector.x -= cameraSpeedV * Input.GetAxis("Mouse Y") * Time.deltaTime;
@@ -70,12 +72,13 @@ public class PlayerController : MonoBehaviour
         //Projection switching
         if (Input.GetMouseButtonDown(1))
         {
-            if (perspectiveCharges > 0 || debugMode) {
-
+            if (perspectiveCharges > 0 || debugMode)
+            {
                 perspSwitcher.BlendToPerspective();
                 isUsingPerspectiveViewMode = true;
 
-                if (!debugMode) {
+                if (!debugMode)
+                {
                     perspectiveCharges--;
                     UpdatePerspectiveChargesText();
                 }
@@ -93,8 +96,10 @@ public class PlayerController : MonoBehaviour
         return Physics.Raycast(transform.position, Vector3.down, distToGround + 0.1f);
     }
 
-    void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.CompareTag("Finish")) {
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Finish"))
+        {
             gameObject.SetActive(false);
             hasFinishedLevel = true;
         }
