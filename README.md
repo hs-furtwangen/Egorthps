@@ -8,5 +8,5 @@ Our take on the theme was **"First person platformer without perspective project
 * Lukas Scheuerle (https://plagiatus.net/)
 * Oliver Leisinger
 * Tawan Nansin
-* Alexander Scheurer
+* Alexander Scheurer (https://aspepex.net/)
 * Bastian Hodapp (https://bassadin.de)
