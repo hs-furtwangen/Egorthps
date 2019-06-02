@@ -2232,6 +2232,12 @@ PrefabInstance:
       propertyPath: nextSceneToLoad
       value: Level02
       objectReference: {fileID: 0}
+    - target: {fileID: 7910607844082988974, guid: 1dbf3a8e2f612f74fb1eca592ec8fe19,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24324684, guid: 0ac7fb39e445048d89688f69c2a1839a,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dbf3a8e2f612f74fb1eca592ec8fe19, type: 3}
 --- !u!4 &624475864392044851 stripped

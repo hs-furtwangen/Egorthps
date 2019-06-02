@@ -920,70 +920,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5341467356789449705, guid: ee9f1b895d14e9e47930b39844263608,
-        type: 3}
-      propertyPath: warmup
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5341467356789449705, guid: ee9f1b895d14e9e47930b39844263608,
-        type: 3}
-      propertyPath: cooldown
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5520414638243372542, guid: ee9f1b895d14e9e47930b39844263608,
-        type: 3}
-      propertyPath: warmup
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5520414638243372542, guid: ee9f1b895d14e9e47930b39844263608,
-        type: 3}
-      propertyPath: cooldown
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831453640339801341, guid: ee9f1b895d14e9e47930b39844263608,
-        type: 3}
-      propertyPath: warmup
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6831453640339801341, guid: ee9f1b895d14e9e47930b39844263608,
-        type: 3}
-      propertyPath: cooldown
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 302555832936976774, guid: ee9f1b895d14e9e47930b39844263608,
-        type: 3}
-      propertyPath: warmup
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 302555832936976774, guid: ee9f1b895d14e9e47930b39844263608,
-        type: 3}
-      propertyPath: cooldown
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3437168764265366293, guid: ee9f1b895d14e9e47930b39844263608,
-        type: 3}
-      propertyPath: warmup
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3437168764265366293, guid: ee9f1b895d14e9e47930b39844263608,
-        type: 3}
-      propertyPath: cooldown
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 501140286379825246, guid: ee9f1b895d14e9e47930b39844263608,
-        type: 3}
-      propertyPath: warmup
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 501140286379825246, guid: ee9f1b895d14e9e47930b39844263608,
-        type: 3}
-      propertyPath: cooldown
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4803164046773903078, guid: ee9f1b895d14e9e47930b39844263608,
         type: 3}
       propertyPath: yRotationSpeed
       value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341467356789449705, guid: ee9f1b895d14e9e47930b39844263608,
+        type: 3}
+      propertyPath: warmup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341467356789449705, guid: ee9f1b895d14e9e47930b39844263608,
+        type: 3}
+      propertyPath: cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520414638243372542, guid: ee9f1b895d14e9e47930b39844263608,
+        type: 3}
+      propertyPath: warmup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520414638243372542, guid: ee9f1b895d14e9e47930b39844263608,
+        type: 3}
+      propertyPath: cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831453640339801341, guid: ee9f1b895d14e9e47930b39844263608,
+        type: 3}
+      propertyPath: warmup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831453640339801341, guid: ee9f1b895d14e9e47930b39844263608,
+        type: 3}
+      propertyPath: cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 302555832936976774, guid: ee9f1b895d14e9e47930b39844263608,
+        type: 3}
+      propertyPath: warmup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 302555832936976774, guid: ee9f1b895d14e9e47930b39844263608,
+        type: 3}
+      propertyPath: cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3437168764265366293, guid: ee9f1b895d14e9e47930b39844263608,
+        type: 3}
+      propertyPath: warmup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3437168764265366293, guid: ee9f1b895d14e9e47930b39844263608,
+        type: 3}
+      propertyPath: cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 501140286379825246, guid: ee9f1b895d14e9e47930b39844263608,
+        type: 3}
+      propertyPath: warmup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 501140286379825246, guid: ee9f1b895d14e9e47930b39844263608,
+        type: 3}
+      propertyPath: cooldown
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee9f1b895d14e9e47930b39844263608, type: 3}
@@ -3255,6 +3255,12 @@ PrefabInstance:
       propertyPath: nextSceneToLoad
       value: End
       objectReference: {fileID: 0}
+    - target: {fileID: 7910607844082988974, guid: 1dbf3a8e2f612f74fb1eca592ec8fe19,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24324684, guid: 0ac7fb39e445048d89688f69c2a1839a,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dbf3a8e2f612f74fb1eca592ec8fe19, type: 3}
 --- !u!4 &624475864392044851 stripped
