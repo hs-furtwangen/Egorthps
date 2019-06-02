@@ -9,6 +9,9 @@ public class LaserGenerator : MonoBehaviour
     public float duration = 1f;
     public float warmup = 1f;
 
+    public AudioSource loadSound;
+    public AudioSource fireSound;
+
     private float currentTimer = 0f;
     enum LASERPHASE { Cooldown, Warmup, On }
 
@@ -33,14 +36,19 @@ public class LaserGenerator : MonoBehaviour
             switch (phase)
             {
                 case LASERPHASE.Cooldown:
+                    loadSound.Stop();
+                    fireSound.Stop();
                     laser.transform.localScale = Vector3.zero;
                     currentTimer = cooldown;
                     break;
                 case LASERPHASE.Warmup:
+                    loadSound.Play();
                     ps.Play();
                     currentTimer = warmup;
                     break;
                 case LASERPHASE.On:
+                    loadSound.Stop();
+                    fireSound.Play();
                     currentTimer = duration;
                     break;
             }
