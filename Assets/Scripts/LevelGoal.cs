@@ -10,6 +10,7 @@ public class LevelGoal : MonoBehaviour
         if(collision.gameObject.CompareTag("Player") && !levelFinishedAudioSource.isPlaying) {
             levelFinishedAudioSource.Play();
             GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>().volume = 0.3f;
+            GameUIManager.Instance.ShowLevelCompleteText(true);
         }
     }
 }
