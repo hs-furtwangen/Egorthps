@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (!playerReference.hasFinishedLevel) {
+        if (playerReference != null && !playerReference.hasFinishedLevel) {
             GameUIManager.Instance.SetTimeText(Math.Round(Time.timeSinceLevelLoad, 2).ToString());
         }
         if (Input.GetKeyDown(KeyCode.Escape))
