@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class LaserGenerator : MonoBehaviour
 {
-    float maxRange = 100f;
-    float cooldown = 10f;
-    float duration = 1f;
-    float warmup = 1f;
-    float currentTimer = 0f;
+    public float maxRange = 100f;
+    public float cooldown = 10f;
+    public float duration = 1f;
+    public float warmup = 1f;
 
+    private float currentTimer = 0f;
     enum LASERPHASE { Cooldown, Warmup, On }
 
     LASERPHASE phase = LASERPHASE.Cooldown;
