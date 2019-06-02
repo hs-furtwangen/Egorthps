@@ -5,13 +5,21 @@ using UnityEngine.UI;
 
 public class GameUIManager : MonoBehaviour
 {
-    public static GameUIManager Instance;
+    private static GameUIManager _instance;
+    public static GameUIManager Instance { get { return _instance; } }
     public Text timeText;
     public Text perspectiveChargesText;
     public Text levelCompleteText;
 
-    void Start() {
-        Instance = this;
+    void Awake() {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
     }
 
     public void SetTimeText(string newText) {
