@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 3546242732126527185}
   - component: {fileID: 2141027020665715179}
   - component: {fileID: 2141027020665715176}
+  - component: {fileID: 2033887857986646965}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -99,6 +100,7 @@ MonoBehaviour:
     type: 3}
   mainCameraPrefab: {fileID: 5390155667383043281, guid: 9c8ccbc196555684a9007417580096b5,
     type: 3}
+  playerReference: {fileID: 0}
 --- !u!82 &2141027020665715179
 AudioSource:
   m_ObjectHideFlags: 0
@@ -208,6 +210,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatMode: 1
+--- !u!114 &2033887857986646965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931528561518538336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f723b449462a18b4b98e3af8b3650a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5979120775257740395
 GameObject:
   m_ObjectHideFlags: 0
