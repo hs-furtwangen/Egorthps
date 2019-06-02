@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     public float jumpForce = 5.0f;
 
+    public bool hasFinishedLevel = false;
+
     private Vector3 rotationVector;
 
     int perspectiveCharges = 3;
@@ -22,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        GameController.Instance.playerReference = this;
+
         distToGround = GetComponent<Collider>().bounds.extents.y;
         rb = GetComponent<Rigidbody>();
 
@@ -87,6 +91,7 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Finish")) {
             gameObject.SetActive(false);
+            hasFinishedLevel = true;
         }
     }
 }
