@@ -12,7 +12,7 @@ public class RocketBehaviour : MonoBehaviour
     void Start()
     {
         rb = transform.GetComponent<Rigidbody>();
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
@@ -25,11 +25,16 @@ public class RocketBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
         if(collision.gameObject.name != "RocketSpawner")
         {
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Instantiate(explosion, this.transform.position, this.transform.rotation);
+        Destroy(this.gameObject);
     }
 }

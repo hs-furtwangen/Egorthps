@@ -4782,6 +4782,7 @@ GameObject:
   - component: {fileID: 4049421017579946851}
   - component: {fileID: 5085144401205813799}
   - component: {fileID: 2679464443271160913}
+  - component: {fileID: 5948527495676261501}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -4848,6 +4849,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &5948527495676261501
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4863632235421266314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.50000143
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6904629227075236883
 GameObject:
   m_ObjectHideFlags: 0
