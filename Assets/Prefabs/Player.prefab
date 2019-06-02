@@ -48,9 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugMode: 1
   playerMoveSpeed: 4
-  cameraSpeedH: 2
-  cameraSpeedV: 1
+  cameraSpeedH: 20
+  cameraSpeedV: 10
   jumpForce: 6.5
+  hasFinishedLevel: 0
 --- !u!54 &6898788530164693595
 Rigidbody:
   m_ObjectHideFlags: 0

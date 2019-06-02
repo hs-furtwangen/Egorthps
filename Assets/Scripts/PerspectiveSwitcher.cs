@@ -39,13 +39,13 @@ public class PerspectiveSwitcher : MonoBehaviour
     }
 
     public void BlendToPerspective() {
-        blender.BlendToMatrix(perspective, 0.3f);
+        blender.BlendToMatrix(perspective, 0.3f, 0.2f);
             ppOrtho.SetActive(false);
             ppPerspective.SetActive(true);
     }
 
     public void BlendToOrthographic() {
-        blender.BlendToMatrix(ortho, 0.3f);
+        blender.BlendToMatrix(ortho, 0.3f, 1);
             ppOrtho.SetActive(true);
             ppPerspective.SetActive(false);
     }

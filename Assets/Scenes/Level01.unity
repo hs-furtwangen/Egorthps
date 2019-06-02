@@ -1037,7 +1037,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-199494
+  m_Name: pb_Mesh-30942
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1702,21 +1702,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 655832290012881147, guid: 294c213d0bc5f1f438c435280e767769,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.94172
-      objectReference: {fileID: 0}
-    - target: {fileID: 655832290012881147, guid: 294c213d0bc5f1f438c435280e767769,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.94172
-      objectReference: {fileID: 0}
-    - target: {fileID: 655832290012881147, guid: 294c213d0bc5f1f438c435280e767769,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.94172
-      objectReference: {fileID: 0}
     - target: {fileID: 7491707440546575572, guid: 294c213d0bc5f1f438c435280e767769,
         type: 3}
       propertyPath: m_Mesh
@@ -1735,7 +1720,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-199480
+  m_Name: pb_Mesh-30930
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

@@ -15,9 +15,15 @@ public class GameController : MonoBehaviour
     private GameObject uiCanvasInstance;
     private float startTime;
 
+    private float slowTimeScale;
+
+    private AudioSource audioSource;
+
     void Awake()
     {
         Instance = this;
+
+        audioSource = this.GetComponent<AudioSource>();
 
         startTime = Time.time;
         uiCanvasInstance = Instantiate(uiCanvas);

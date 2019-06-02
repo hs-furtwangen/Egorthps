@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class PlayerController : MonoBehaviour
 
     PerspectiveSwitcher perspSwitcher;
     bool isUsingPerspectiveViewMode = false;
+
+    float regularTimescale = 1;
+    float slowTimescale = 0.2f;
 
     void Start()
     {
@@ -47,8 +51,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!isUsingPerspectiveViewMode || debugMode) {
             //Camera Movement
-            rotationVector.y += cameraSpeedH * Input.GetAxis("Mouse X");
-            rotationVector.x -= cameraSpeedV * Input.GetAxis("Mouse Y");
+            rotationVector.y += cameraSpeedH * Input.GetAxis("Mouse X") * Time.deltaTime;
+            rotationVector.x -= cameraSpeedV * Input.GetAxis("Mouse Y") * Time.deltaTime;
             GameObject.FindGameObjectWithTag("VirtualCamera").transform.rotation = Quaternion.Euler(rotationVector);
 
             Vector3 moveDirection;
@@ -70,6 +74,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             if (perspectiveCharges > 0 || debugMode) {
+
                 perspSwitcher.BlendToPerspective();
                 isUsingPerspectiveViewMode = true;
 
