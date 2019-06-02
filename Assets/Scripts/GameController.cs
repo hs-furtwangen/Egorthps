@@ -3,7 +3,8 @@ using System;
 
 public class GameController : MonoBehaviour
 {
-    public static GameController Instance;
+    private static GameController _instance;
+    public static GameController Instance { get { return _instance; } }
 
     public GameObject uiCanvas;
     public Camera mainCameraPrefab;
@@ -18,7 +19,14 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-        Instance = this;
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
 
         audioSource = this.GetComponent<AudioSource>();
 
@@ -29,7 +37,8 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (playerReference != null && !playerReference.hasFinishedLevel) {
+        if (playerReference != null && !playerReference.hasFinishedLevel)
+        {
             GameUIManager.Instance.SetTimeText(Math.Round(Time.timeSinceLevelLoad, 2).ToString());
         }
         if (Input.GetKeyDown(KeyCode.Escape))
