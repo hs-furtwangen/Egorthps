@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class BeatCube : MonoBehaviour, IBeatObject
+public class BeatFont : MonoBehaviour, IBeatObject
 {
     public Color[] Colors =
     {
@@ -20,18 +21,18 @@ public class BeatCube : MonoBehaviour, IBeatObject
     public Color currentColor;
     public Color nextColor;
 
-    public Material mat;
+    public Text text;
 
     // Start is called before the first frame update
     void Start()
     {
-        mat = this.GetComponent<Renderer>().material;
+        text = this.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        mat.SetColor("_EmissionColor", currentColor);
+        text.color = currentColor;
     }
 
     IEnumerator SwitchColor()
@@ -57,7 +58,7 @@ public class BeatCube : MonoBehaviour, IBeatObject
             nextColor = Colors[Mathf.RoundToInt(Random.Range(0, Colors.Length - 1))];
         }
 
-        lastColor = mat.GetColor("_EmissionColor");
+        lastColor = text.color;
 
         StartCoroutine(SwitchColor());
     }
