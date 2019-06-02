@@ -23,9 +23,6 @@ public class PlayerController : MonoBehaviour
     PerspectiveSwitcher perspSwitcher;
     bool isUsingPerspectiveViewMode = false;
 
-    float regularTimescale = 1;
-    float slowTimescale = 0.2f;
-
     void Start()
     {
         GameController.Instance.playerReference = this;
