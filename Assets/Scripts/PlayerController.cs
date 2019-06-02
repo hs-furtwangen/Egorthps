@@ -104,4 +104,9 @@ public class PlayerController : MonoBehaviour
             hasFinishedLevel = true;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("I've been hit");
+    }
 }
