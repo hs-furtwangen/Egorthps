@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -107,6 +108,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("I've been hit");
+        Debug.Log("Player entered trigger");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
