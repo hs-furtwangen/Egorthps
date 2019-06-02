@@ -25,7 +25,7 @@ public class RocketBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name != "RocketSpawner")
+        if(collision.gameObject.tag != "rocketLauncher")
         {
             Instantiate(explosion, this.transform.position, this.transform.rotation);
             Destroy(this.gameObject);
