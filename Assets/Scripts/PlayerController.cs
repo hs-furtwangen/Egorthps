@@ -49,12 +49,15 @@ public class PlayerController : MonoBehaviour
             //Camera Movement
             rotationVector.y += cameraSpeedH * Input.GetAxis("Mouse X");
             rotationVector.x -= cameraSpeedV * Input.GetAxis("Mouse Y");
-            transform.rotation = Quaternion.Euler(rotationVector);
+            GameObject.FindGameObjectWithTag("VirtualCamera").transform.rotation = Quaternion.Euler(rotationVector);
+
+            Vector3 moveDirection;
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            moveDirection = Camera.main.transform.TransformDirection(moveDirection);
+            moveDirection *= playerMoveSpeed;
 
             //Player Movement
-            rb.MovePosition(rb.position
-                + (transform.right * Input.GetAxis("Horizontal") * playerMoveSpeed * Time.deltaTime)
-                + (transform.forward * Input.GetAxis("Vertical") * playerMoveSpeed * Time.deltaTime));
+            rb.MovePosition(rb.position + moveDirection * Time.deltaTime);
 
             //Jumping
             if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
