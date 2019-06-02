@@ -9,6 +9,7 @@ public class LevelGoal : MonoBehaviour
     void OnCollisionEnter(Collision collision) {
         if(collision.gameObject.CompareTag("Player") && !levelFinishedAudioSource.isPlaying) {
             levelFinishedAudioSource.Play();
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>().volume = 0.3f;
         }
     }
 }
