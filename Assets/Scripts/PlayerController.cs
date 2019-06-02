@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //Public
-    public bool debugMode = true;
+    public bool debugMode = false;
     public float playerMoveSpeed = 10.0f;
 
     public float cameraSpeedH = 2.0f;
