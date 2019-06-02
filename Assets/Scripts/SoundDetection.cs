@@ -10,25 +10,21 @@ public class SoundDetection : MonoBehaviour
     // float cooldown = 0.4f;
     // float currentCooldown = 0f;
     BeatCube beatCube;
-    Material mat;
+    BeatUi beatUi;
 
     void Start()
     {
         beatDetection = GameObject.FindGameObjectWithTag("GameController").GetComponent<BeatDetection>();
-        beatCube = this.GetComponent<BeatCube>();
-        beatDetection.CallBackFunction += OnBeatDetected;
 
-        mat = this.GetComponent<Renderer>().material;
+        beatCube = this.GetComponent<BeatCube>();
+        beatUi = this.GetComponent<BeatUi>();
+
+        beatDetection.CallBackFunction += OnBeatDetected;
     }
 
     void OnBeatDetected(BeatDetection.EventInfo eventInfo)
     {
-        beatCube.NextColor();
+        beatCube?.NextColor();
+        beatUi?.NextColor();
     }
-
-    // private void Update()
-    // {
-    //     currentCooldown -= Time.deltaTime;
-
-    // }
 }
